@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.80">
+    <title>Order Confirmed | Riska's Fixed Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- BRAND VARIABLES --- */
+        :root {
+            --primary-color: #003366;
+            --accent-color: #f26522;
+            --accent-hover: #d94e0d;
+            --success-color: #059669; /* Emerald Green */
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 12px;
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: white;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            justify-content: center; /* Centered for this page */
+        }
+        
+        .logo img { height: 35px; margin-right: 10px; }
+        .logo span { color: var(--accent-color); margin-left: 4px; }
+
+        /* --- MAIN CONTENT --- */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .success-card {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            padding: 50px 40px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top colored accent bar */
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: var(--success-color);
+        }
+
+        /* Success Icon Animation */
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            color: var(--success-color);
+            font-size: 2.5rem;
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- DOWNLOAD BUTTON --- */
+        .btn-download {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 51, 102, 0.3);
+        }
+
+        /* --- NEXT STEPS BOX --- */
+        .next-steps {
+            background-color: #f1f5f9;
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            margin: 0 0 15px 0;
+            font-size: 1rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        .step-item:last-child { margin-bottom: 0; }
+
+        .step-icon {
+            color: var(--accent-color);
+            margin-right: 12px;
+            margin-top: 3px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* --- FOOTER --- */
+        .footer-link {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .footer-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer-link a:hover { text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Riska's Finance Logo">
+                Riska's <span>Fixed Assets</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="success-card">
+            
+            <div class="icon-circle">
+                <i class="fas fa-check"></i>
+            </div>
+
+            <h1>Payment Successful!</h1>
+            <p>Thank you for your purchase. Your order is confirmed.</p>
+
+            <a href="RiskasFixedAssets.zip" class="btn-download" download>
+                <i class="fas fa-download"></i> Download Software
+            </a>
+
+            <div class="next-steps">
+                <h3>What happens next?</h3>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-file-zipper"></i></div>
+                    <div><strong>Download & Unzip:</strong> Click the button above to save the software to your computer.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-key"></i></div>
+                    <div><strong>Check your Email:</strong> We have sent your unique <strong>License Key</strong> to your email address.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-desktop"></i></div>
+                    <div><strong>Install:</strong> Run the installer and enter your license key to activate the full version.</div>
+                </div>
+            </div>
+
+            <div class="footer-link">
+                Need help installing? <a href="mailto:support@riskasfinance.com">Contact Support</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
