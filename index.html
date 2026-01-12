@@ -11,6 +11,7 @@
         /* --- BRAND VARIABLES --- */
         :root {
             --primary-color: #003366;
+            --primary-dark: #002244;
             --accent-color: #f26522;
             --accent-hover: #d94e0d;
             --success-color: #059669; /* Emerald Green */
@@ -121,20 +122,30 @@
             margin-bottom: 30px;
         }
 
-        /* --- DOWNLOAD BUTTON --- */
+        /* --- DOWNLOAD BUTTONS --- */
+        .download-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; /* Stacks on mobile if needed */
+            margin-bottom: 30px;
+        }
+
         .btn-download {
             background-color: var(--primary-color);
             color: white;
-            padding: 18px 32px;
+            padding: 18px 25px; /* Slightly adjusted padding for two buttons */
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+            min-width: 200px; /* Ensures buttons look even */
+            justify-content: center;
         }
 
         .btn-download:hover {
@@ -143,10 +154,20 @@
             box-shadow: 0 8px 15px rgba(0, 51, 102, 0.3);
         }
 
+        /* Specific style for Mac button */
+        .btn-mac {
+            background-color: #333333; /* Dark Grey for Apple */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .btn-mac:hover {
+            background-color: #000000;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
         /* --- NEXT STEPS BOX --- */
         .next-steps {
             background-color: #f1f5f9;
-            margin-top: 40px;
+            margin-top: 20px;
             padding: 25px;
             border-radius: 8px;
             text-align: left;
@@ -214,11 +235,17 @@
             </div>
 
             <h1>Payment Successful!</h1>
-            <p>Thank you for your purchase. Your order is confirmed.</p>
+            <p>Thank you for your purchase. Please download the version for your operating system below.</p>
 
-            <a href="https://www.dropbox.com/scl/fi/rtt8ydd3md5sdqvukmzjv/RiskasFixedAsset.zip?rlkey=x76l3punaqq93j48idyac5y2o&st=71ot0sle&dl=1" class="btn-download" target="_blank">
-                <i class="fas fa-download"></i> Download Software
-            </a>
+            <div class="download-buttons">
+                <a href="https://www.dropbox.com/scl/fi/rtt8ydd3md5sdqvukmzjv/RiskasFixedAsset.zip?rlkey=x76l3punaqq93j48idyac5y2o&st=71ot0sle&dl=1" class="btn-download" target="_blank">
+                    <i class="fab fa-windows"></i> Windows Version
+                </a>
+                
+                <a href="#" class="btn-download btn-mac" target="_blank">
+                    <i class="fab fa-apple"></i> Mac Version
+                </a>
+            </div>
 
             <div class="next-steps">
                 <h3>What happens next?</h3>
@@ -244,7 +271,3 @@
 
 </body>
 </html>
-
-
-
-
